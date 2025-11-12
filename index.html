@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolos de Seguridad en la Red</title>
+    <style>
+        :root {
+            --primary-color: #1a2b3c;
+            --secondary-color: #2c82c9;
+            --accent-color: #ff6b6b;
+            --light-color: #f7f9fc;
+            --dark-color: #1a2b3c;
+            --text-color: #333;
+            --shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            --gradient: linear-gradient(135deg, #1a2b3c, #2c82c9);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-image: linear-gradient(to bottom, #f5f7fa, #e4e8f0);
+        }
+
+        header {
+            background: var(--gradient);
+            color: white;
+            padding: 2.5rem 0;
+            text-align: center;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        h3 {
+            font-size: 1.6rem;
+            color: var(--secondary-color);
+            position: relative;
+            padding-left: 15px;
+        }
+
+        h3::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 70%;
+            background-color: var(--accent-color);
+            border-radius: 3px;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            padding: 1.8rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid var(--secondary-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .protocol-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .protocol-card {
+            flex: 1 1 calc(50% - 1rem);
+            min-width: 300px;
+        }
+
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            justify-content: center;
+        }
+
+        .member {
+            background: var(--light-color);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            flex: 1 1 180px;
+            max-width: 200px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .member::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+        }
+
+        .member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
+        }
+
+        .member-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+            border: 4px solid var(--secondary-color);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .member:hover .member-photo {
+            transform: scale(1.05);
+            border-color: var(--accent-color);
+        }
+
+        .member h4 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .member p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin: 1.5rem 0;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .references {
+            list-style-type: none;
+        }
+
+        .references li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.8rem;
+            position: relative;
+            transition: transform 0.2s ease;
+        }
+
+        .references li:hover {
+            transform: translateX(5px);
+        }
+
+        .references li:before {
+            content: "▸";
+            color: var(--secondary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .references li:hover:before {
+            color: var(--accent-color);
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+        }
+
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+            border-bottom: 2px solid #e0e0e0;
+            background: white;
+            border-radius: 12px;
+            padding: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-tab {
+            padding: 0.9rem 1.8rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            border-radius: 8px;
+            margin: 0 0.2rem;
+        }
+
+        .nav-tab:hover {
+            background-color: rgba(44, 130, 201, 0.1);
+            color: var(--secondary-color);
+        }
+
+        .nav-tab.active {
+            border-bottom: 3px solid var(--secondary-color);
+            color: var(--secondary-color);
+            font-weight: bold;
+            background-color: rgba(44, 130, 201, 0.15);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 0.5rem;
+        }
+
+        ul li::marker {
+            color: var(--secondary-color);
+        }
+
+        .protocol-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .protocol-section {
+                flex-direction: column;
+            }
+            
+            .protocol-card {
+                flex: 1 1 100%;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .nav-tabs {
+                flex-wrap: wrap;
+            }
+            
+            .nav-tab {
+                flex: 1 1 calc(50% - 0.5rem);
+                margin-bottom: 0.5rem;
+                text-align: center;
+            }
+            
+            .member {
+                flex: 1 1 calc(50% - 1rem);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-tab {
+                flex: 1 1 100%;
+            }
+            
+            .member {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Protocolos de Seguridad en la Red</h1>
+            <p>Proyecto de Investigación - Seguridad Informática</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="nav-tabs">
+            <div class="nav-tab active" data-tab="home">Inicio</div>
+            <div class="nav-tab" data-tab="protocols">Protocolos</div>
+            <div class="nav-tab" data-tab="team">Equipo</div>
+            <div class="nav-tab" data-tab="references">Referencias</div>
+        </div>
+
+        <div id="home" class="tab-content active">
+            <div class="card">
+                <h2>Propósito del Proyecto</h2>
+                <p>Que los alumnos comprendan, analicen y apliquen los principales protocolos de seguridad en redes, identificando su función, estructura, y utilidad en la protección de la información, mediante un trabajo colaborativo que integre investigación, simulación práctica y comunicación efectiva.</p>
+            </div>
+
+            <div class="card">
+                <h2>Objetivos de Aprendizaje</h2>
+                <p>Al finalizar el proyecto, el estudiante será capaz de:</p>
+                <ul>
+                    <li>Identificar los objetivos, funciones y características principales de los protocolos de seguridad más utilizados en redes.</li>
+                    <li>Explicar la importancia de la seguridad en la transmisión de datos y autenticación.</li>
+                    <li>Simular el funcionamiento básico de los protocolos asignados.</li>
+                    <li>Comunicar de manera clara, visual y técnica la utilidad de cada protocolo en un contexto real.</li>
+                    <li>Colaborar en la creación de un sitio web que centralice y difunda los resultados del grupo.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="protocols" class="tab-content">
+            <h2>Protocolos de Seguridad</h2>
+            <p>Nuestro equipo está investigando los protocolos IPSec y SET:</p>
+            
+            <div class="protocol-section">
+                <div class="protocol-card card">
+                    <div class="protocol-icon">🔒</div>
+                    <h3>IPSec (Internet Protocol Security)</h3>
+                    <p><strong>Función principal:</strong> IPSec es un conjunto de protocolos que proporciona seguridad a nivel de red para las comunicaciones a través de redes IP. Su función principal es asegurar las comunicaciones mediante autenticación y cifrado de cada paquete IP en una sesión de comunicación.</p>
+                    
+                    <p><strong>Capa del modelo OSI:</strong> Capa de red (Capa 3)</p>
+                    
+                    <p><strong>Tipo de seguridad que ofrece:</strong> 
+                        <ul>
+                            <li>Cifrado de datos</li>
+                            <li>Autenticación de origen de datos</li>
+                            <li>Integridad de datos</li>
+                            <li>Protección contra replay</li>
+                        </ul>
+                    </p>
+                    
+                    <p><strong>Ventajas:</strong>
+                        <ul>
+                            <li>Transparente para aplicaciones y usuarios</li>
+                            <li>Protección integral de la comunicación</li>
+                            <li>Ampliamente compatible con diferentes sistemas</li>
+                        </ul>
+                    </p>
+                    
+                    <p><strong>Limitaciones:</strong>
+                        <ul>
+                            <li>Complejidad de configuración</li>
+                            <li>Puede afectar el rendimiento de la red</li>
+                            <li>Requiere certificados o claves precompartidas</li>
+                        </ul>
+                    </p>
+                    
+                    <p><strong>Ejemplo de uso:</strong> IPSec se utiliza comúnmente en redes privadas virtuales (VPN) para conectar oficinas remotas de forma segura a través de Internet.</p>
+                </div>
+
+                <div class="protocol-card card">
+                    <div class="protocol-icon">💳</div>
+                    <h3>SET (Secure Electronic Transaction)</h3>
+                    <p><strong>Función principal:</strong> SET es un protocolo estándar para asegurar las transacciones con tarjetas de crédito a través de Internet. Fue desarrollado por Visa y MasterCard para proporcionar un método seguro para realizar compras en línea.</p>
+                    
+                    <p><strong>Capa del modelo OSI:</strong> Capa de aplicación (Capa 7)</p>
+                    
+                    <p><strong>Tipo de seguridad que ofrece:</strong> 
+                        <ul>
+                            <li>Confidencialidad de la información</li>
+                            <li>Autenticación de las partes</li>
+                            <li>Integridad de datos</li>
+                            <li>No repudio</li>
+                        </ul>
+                    </p>
+                    
+                    <p><strong>Ventajas:</strong>
+                        <ul>
+                            <li>Protección específica para transacciones financieras</li>
+                            <li>Autenticación mutua entre comprador y vendedor</li>
+                            <li>El comerciante no tiene acceso a los datos de la tarjeta</li>
+                        </ul>
+                    </p>
+                    
+                    <p><strong>Limitaciones:</strong>
+                        <ul>
+                            <li>Complejidad de implementación</li>
+                            <li>No fue ampliamente adoptado</li>
+                            <li>Reemplazado por otros protocolos como SSL/TLS</li>
+                        </ul>
+                    </p>
+                    
+                    <p><strong>Ejemplo de uso:</strong> Aunque SET no se utiliza ampliamente hoy en día, sentó las bases para los protocolos de pago seguros actuales y fue un precursor importante en la seguridad de las transacciones electrónicas.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>Demostración Práctica</h3>
+                <p>A continuación se presenta un video que muestra la implementación y funcionamiento de los protocolos IPSec y SET:</p>
+                
+                <div class="video-container">
+                    <!-- Aquí iría el video embebido sobre ambos protocolos -->
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                </div>
+                <p><em>Nota: Este es un video de ejemplo. En el proyecto real, se incluirá el video creado por el equipo que cubra ambos protocolos.</em></p>
+            </div>
+        </div>
+
+        <div id="team" class="tab-content">
+            <h2>Nuestro Equipo</h2>
+            <p>Somos un equipo de 5 estudiantes trabajando en conjunto para investigar y presentar los protocolos IPSec y SET:</p>
+            
+            <div class="team-members">
+                <div class="member card">
+                    <img src="images\kevin.jpeg" alt="Foto del integrante 1" class="member-photo">
+                    <h4>Kevin Abel Mena Dominguez</h4>
+                    <p>Rol: Investigador principal</p>
+                </div>
+                <div class="member card">
+                    <img src="images\jesus.jpeg" alt="Foto del integrante 2" class="member-photo">
+                    <h4>Jesus Antonio Canche Canche</h4>
+                    <p>Rol: Especialista en simulación</p>
+                </div>
+                <div class="member card">
+                    <img src="images\Gerardo.jpeg" alt="Foto del integrante 3" class="member-photo">
+                    <h4>Gerardo Manuel Eb Santos</h4>
+                    <p>Rol: Desarrollador de contenido</p>
+                </div>
+                <div class="member card">
+                    <img src="images\deysi.jpeg" alt="Foto del integrante 4" class="member-photo">
+                    <h4>Deysi Yasme Balam Oy</h4>
+                    <p>Rol: Editor de video</p>
+                </div>
+                <div class="member card">
+                    <img src="images\Joma.jpeg" alt="Foto del integrante 5" class="member-photo">
+                    <h4>Jose Martin Kuh Medina</h4>
+                    <p>Rol: Diseñador web</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="references" class="tab-content">
+            <h2>Referencias y Recursos Adicionales</h2>
+            <div class="card">
+                <h3>Fuentes de Investigación</h3>
+                <ul class="references">
+                    <li>Stallings, W. (2017). Cryptography and Network Security: Principles and Practice. Pearson Education.</li>
+                    <li>Tanenbaum, A. S., & Wetherall, D. J. (2011). Computer Networks. Pearson Education.</li>
+                    <li>Forouzan, B. A. (2013). Data Communications and Networking. McGraw-Hill.</li>
+                    <li>RFC 4301 - Security Architecture for the Internet Protocol</li>
+                    <li>RFC 4303 - IP Encapsulating Security Payload (ESP)</li>
+                    <li>SET Secure Electronic Transaction Specification - Book 1: Business Description</li>
+                </ul>
+                
+                <h3>Herramientas Utilizadas</h3>
+                <ul class="references">
+                    <li>Wireshark - Analizador de protocolos de red</li>
+                    <li>VirtualBox - Virtualización para pruebas</li>
+                    <li>FileZilla - Cliente FTP/SFTP</li>
+                    <li>OpenSSL - Implementación de protocolos SSL/TLS</li>
+                </ul>
+                
+                <h3>Enlaces de Interés</h3>
+                <ul class="references">
+                    <li><a href="https://www.ietf.org/rfc.html" target="_blank">IETF RFC Repository</a></li>
+                    <li><a href="https://www.cloudflare.com/learning/ssl/what-is-ssl/" target="_blank">Cloudflare - ¿Qué es SSL?</a></li>
+                    <li><a href="https://www.ssh.com/academy/ssh/protocol" target="_blank">SSH Academy - Protocolo SSH</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Proyecto de Seguridad Informática - Protocolos de Seguridad en la Red</p>
+            <p>Cuatrimestre: IDS – 7A | Fecha de entrega: 14 de Noviembre de 2025</p>
+            <p>Profesor: I.S.C Emmanuel de Atocha Perez Ojeda</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navegación por pestañas
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.nav-tab');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remover clase activa de todas las pestañas
+                    tabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Agregar clase activa a la pestaña clickeada
+                    this.classList.add('active');
+                    
+                    // Ocultar todo el contenido
+                    const contents = document.querySelectorAll('.tab-content');
+                    contents.forEach(content => content.classList.remove('active'));
+                    
+                    // Mostrar el contenido correspondiente
+                    const tabId = this.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Simulación de carga de datos
+            console.log("Página cargada correctamente");
+            console.log("Protocolos asignados: IPSec y SET");
+            console.log("Integrantes del equipo: 5");
+        });
+    </script>
+</body>
+</html>
