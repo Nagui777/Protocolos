@@ -80,11 +80,14 @@
 
         <!---------------------------------------------------------------------------- EQUIPO 2 -----------------------------------------------------------------
         <div id="team2" class="tab-content">
-            <div class="card">
-                <h2>Equipo 2</h2>
-                <p>Contenido del equipo 2...</p>
-                <p>Aquí puedes agregar información sobre los protocolos que investigó el equipo 2.</p>
-            </div>
+            <script>
+            function cargarContenido(id, archivo) {
+                fetch(archivo).then(res => res.text()).then(html => {
+                    document.getElementById(id).innerHTML = html;
+                });
+             }
+              cargarContenido("team2", "equipo2.html");
+              </script>
         </div>
 
 
