@@ -501,3 +501,38 @@
             border-radius: 6px;
             font-weight: bold;
         }
+
+
+                .videos-container {
+    margin: 1.5rem 0;
+}
+
+.video-pair {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.video-item {
+    flex: 1 1 calc(50% - 1rem);
+    min-width: 300px;
+}
+
+.video-item h4 {
+    margin-bottom: 0.8rem;
+    color: var(--secondary-color);
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .video-pair {
+        flex-direction: column;
+    }
+    
+    .video-item {
+        flex: 1 1 100%;
+    }
+}
