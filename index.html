@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Protocolos de Seguridad en la Red</title>
     <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
     <button class="theme-toggle" id="themeToggle" aria-label="Cambiar modo oscuro/claro">
         <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -50,17 +52,21 @@
         <section id="home" class="tab-content active" role="tabpanel">
             <div class="card">
                 <h2>Propósito del Proyecto</h2>
-                <p>Que los alumnos comprendan, analicen y apliquen los principales protocolos de seguridad en redes, identificando su función, estructura y utilidad en la protección de la información, mediante un trabajo colaborativo que integre investigación, simulación práctica y comunicación efectiva.</p>
+                <p>Que los alumnos comprendan, analicen y apliquen los principales protocolos de seguridad en redes,
+                    identificando su función, estructura y utilidad en la protección de la información, mediante un
+                    trabajo colaborativo que integre investigación, simulación práctica y comunicación efectiva.</p>
             </div>
 
             <div class="card">
                 <h2>Objetivos de Aprendizaje</h2>
                 <p>Al finalizar el proyecto, el estudiante será capaz de:</p>
                 <ul>
-                    <li>Identificar los objetivos, funciones y características principales de los protocolos de seguridad más utilizados en redes.</li>
+                    <li>Identificar los objetivos, funciones y características principales de los protocolos de
+                        seguridad más utilizados en redes.</li>
                     <li>Explicar la importancia de la seguridad en la transmisión de datos y autenticación.</li>
                     <li>Simular el funcionamiento básico de los protocolos asignados.</li>
-                    <li>Comunicar de manera clara, visual y técnica la utilidad de cada protocolo en un contexto real.</li>
+                    <li>Comunicar de manera clara, visual y técnica la utilidad de cada protocolo en un contexto real.
+                    </li>
                     <li>Colaborar en la creación de un sitio web que centralice y difunda los resultados del grupo.</li>
                 </ul>
             </div>
@@ -69,9 +75,86 @@
         <!-- EQUIPO 1 -->
         <section id="team1" class="tab-content" role="tabpanel" hidden>
             <div class="card">
-                <h2>Equipo 1</h2>
-                <p>Contenido del equipo 1...</p>
-                <p>Aquí puedes agregar información sobre los protocolos que investigó el equipo 1.</p>
+                <h2>Nuestro Equipo</h2>
+                <p>Nuestro equipo fue designado para describir los protocolos HTTPS y SSL</p>
+
+                <div class="team-members">
+                    <div class="member card">
+                        <h4>Jesus Alberto May Lugo</h4>
+                    </div>
+                    <div class="member card">
+                        <h4>Manuel Alberto Rodriguez Mezquita</h4>
+                    </div>
+                    <div class="member card">
+                        <h4>Jesus Ivan Gonzalez Ko</h4>
+                    </div>
+                    <div class="member card">
+                        <h4>Guillermo Aron Isaac Noh</h4>
+                    </div>
+                    <div class="member card">
+                        <h4>Zulmy Marlene Chan Bote</h4>
+                    </div>
+                    <div class="member card">
+                        <h4>Royser Alejandro Dzib Mis</h4>
+                    </div>
+                </div>
+
+                <h2>Protocolos de Seguridad</h2>
+
+                <div class="protocol-section">
+
+                    <article class="protocol-card card">
+                        <h3>🌐 HTTPS (HyperText Transfer Protocol Secure)</h3>
+                        <p><strong>Función principal:</strong> Permitir la comunicación segura entre un navegador y un
+                            servidor web mediante cifrado, autenticación y protección de la integridad de los datos.</p>
+                        <p><strong>Capa OSI:</strong> Aplicación (Capa 7).</p>
+                        <p><strong>Tipo de seguridad:</strong> Cifrado TLS/SSL, autenticación del servidor mediante
+                            certificados digitales y protección contra ataques MITM.</p>
+                        <p><strong>Ejemplo de uso:</strong> Acceso seguro a sitios web como bancos, redes sociales,
+                            tiendas en línea y cualquier página con intercambio de información sensible.</p>
+                    </article>
+
+                    <article class="protocol-card card">
+                        <h3>🔐 SSL (Secure Sockets Layer)</h3>
+                        <p><strong>Función principal:</strong> Protocolo criptográfico diseñado para proporcionar
+                            comunicaciones seguras en redes mediante cifrado y autenticación.</p>
+                        <p><strong>Capa OSI:</strong> Capa de sesión y presentación (entre Capa 5 y Capa 6).</p>
+                        <p><strong>Tipo de seguridad:</strong> Cifrado simétrico/asimétrico, autenticación mediante
+                            certificados X.509 y verificación de integridad mediante MAC.</p>
+                        <p><strong>Ejemplo de uso:</strong> Base de seguridad utilizada originalmente para HTTPS; hoy en
+                            día reemplazado por TLS debido a vulnerabilidades en SSL 2.0 y SSL 3.0.</p>
+                    </article>
+                </div>
+
+
+                <div class="card">
+                    <h3>Video explicativa</h3>
+                    <div class="video-container">
+                        <iframe width="813" height="466" src="https://www.youtube.com/embed/1vi8Iz2EzAs"
+                            title="EQUIPO 5 PROTOCOLO DE SEGURIDAD" frameborder="0" allowfullscreen></iframe>
+                    </div>
+
+                    <div class="video-footer">
+                        <p><em>Si el video no aparece, puede dar clic al siguiente botón:</em></p>
+                        <a href="https://www.youtube.com/watch?v=1vi8Iz2EzAs" target="_blank" class="btn-video"
+                            rel="noopener noreferrer">Ver en YouTube</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Referencias y Recursos Adicionales</h3>
+                    <ul class="references">
+                        <ul class="references">
+                            <li><a style="color: inherit;" href="https://developer.mozilla.org/es/docs/Web/HTTP/HTTPS"
+                                    target="_blank"> Glosario de MDN Web Docs HTTPS</a></li>
+
+                            <li><a style="color: inherit;" href="https://www.cloudflare.com/es-la/learning/ssl/what-is-ssl/"
+                                    target="_blank">¿Qué es el SSL? | Definición de SSL</a></li>
+                        </ul>
+
+                    </ul>
+
+                </div>
             </div>
         </section>
 
@@ -90,11 +173,15 @@
                     <article class="protocol-card card">
                         <div class="protocol-icon" aria-hidden="true">🔒</div>
                         <h4>SSH (Secure Shell)</h4>
-                        <p><strong>Función principal:</strong> Proporcionar acceso remoto seguro a sistemas y permitir la administración protegida mediante cifrado, autenticación y túneles seguros. Diseñado como una alternativa segura a protocolos no cifrados como telnet y rlogin.</p>
+                        <p><strong>Función principal:</strong> Proporcionar acceso remoto seguro a sistemas y permitir
+                            la administración protegida mediante cifrado, autenticación y túneles seguros. Diseñado como
+                            una alternativa segura a protocolos no cifrados como telnet y rlogin.</p>
 
-                        <p><strong>Capa del modelo OSI:</strong> Aplicación (Capa 7). SSH usa TCP y criptografía de clave pública/privada para garantizar la privacidad.</p>
+                        <p><strong>Capa del modelo OSI:</strong> Aplicación (Capa 7). SSH usa TCP y criptografía de
+                            clave pública/privada para garantizar la privacidad.</p>
 
-                        <p><strong>Tipo de seguridad:</strong> Cifrado de la conexión, autenticación del usuario/host, integridad de datos y posibilidad de túneles seguros.</p>
+                        <p><strong>Tipo de seguridad:</strong> Cifrado de la conexión, autenticación del usuario/host,
+                            integridad de datos y posibilidad de túneles seguros.</p>
 
                         <p><strong>Ventajas:</strong></p>
                         <ul>
@@ -118,11 +205,13 @@
                     <article class="protocol-card card">
                         <div class="protocol-icon" aria-hidden="true">📁</div>
                         <h4>FTPS (File Transfer Protocol Secure)</h4>
-                        <p><strong>Función principal:</strong> Transferencia segura de archivos usando FTP sobre SSL/TLS para proteger credenciales y datos.</p>
+                        <p><strong>Función principal:</strong> Transferencia segura de archivos usando FTP sobre SSL/TLS
+                            para proteger credenciales y datos.</p>
 
                         <p><strong>Capa del modelo OSI:</strong> Aplicación (Capa 7).</p>
 
-                        <p><strong>Tipo de seguridad:</strong> Cifrado de comandos y/o datos mediante SSL/TLS, autenticación con certificados.</p>
+                        <p><strong>Tipo de seguridad:</strong> Cifrado de comandos y/o datos mediante SSL/TLS,
+                            autenticación con certificados.</p>
 
                         <p><strong>Ventajas:</strong></p>
                         <ul>
@@ -136,11 +225,13 @@
                         <ul>
                             <li>Configuración compleja (certificados y puertos).</li>
                             <li>Problemas con firewalls/NAT por uso de múltiples puertos.</li>
-                            <li>Implementaciones distintas (implícito vs explícito) pueden causar incompatibilidades.</li>
+                            <li>Implementaciones distintas (implícito vs explícito) pueden causar incompatibilidades.
+                            </li>
                             <li>Dependencia de certificados válidos.</li>
                         </ul>
 
-                        <p><strong>Ejemplo de uso:</strong> Transferir archivos entre servidores con cifrado TLS en el transporte.</p>
+                        <p><strong>Ejemplo de uso:</strong> Transferir archivos entre servidores con cifrado TLS en el
+                            transporte.</p>
                     </article>
                 </div>
 
@@ -148,8 +239,9 @@
                     <h3>Demostración Práctica</h3>
                     <p>Video que muestra la implementación y funcionamiento de SSH y FTPS:</p>
                     <div class="video-container">
-                        <iframe width="921" height="522" src="https://www.youtube.com/embed/ZjB_O-OBq9o" title="14 de noviembre de 2025" frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        <iframe width="921" height="522" src="https://www.youtube.com/embed/ZjB_O-OBq9o"
+                            title="14 de noviembre de 2025" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <p><em>Video demostrativo del uso de los protocolos SSH y FTPS</em></p>
@@ -168,11 +260,26 @@
 
                     <h4>Equipo</h4>
                     <div class="team-members">
-                        <div class="member card"><h5>Canche Chi Luis Eduardo</h5><p>Matrícula: 2321298</p></div>
-                        <div class="member card"><h5>Chan Chim José Isac</h5><p>Matrícula: 23212904</p></div>
-                        <div class="member card"><h5>Moreno Ek Melquiel de Jesus</h5><p>Matrícula: 23212927</p></div>
-                        <div class="member card"><h5>Trujeque Euan Gael Jesus</h5><p>Matrícula: 23212939</p></div>
-                        <div class="member card"><h5>Uitz Uitz Diego Josué</h5><p>Matrícula: 23212936</p></div>
+                        <div class="member card">
+                            <h5>Canche Chi Luis Eduardo</h5>
+                            <p>Matrícula: 2321298</p>
+                        </div>
+                        <div class="member card">
+                            <h5>Chan Chim José Isac</h5>
+                            <p>Matrícula: 23212904</p>
+                        </div>
+                        <div class="member card">
+                            <h5>Moreno Ek Melquiel de Jesus</h5>
+                            <p>Matrícula: 23212927</p>
+                        </div>
+                        <div class="member card">
+                            <h5>Trujeque Euan Gael Jesus</h5>
+                            <p>Matrícula: 23212939</p>
+                        </div>
+                        <div class="member card">
+                            <h5>Uitz Uitz Diego Josué</h5>
+                            <p>Matrícula: 23212936</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -186,7 +293,8 @@
         <section id="team3" class="tab-content" role="tabpanel" hidden>
             <div class="card">
                 <h2>Nuestro Equipo</h2>
-                <p>Somos un equipo de 6 estudiantes trabajando en conjunto para investigar y presentar los protocolos IPSec y SET:</p>
+                <p>Somos un equipo de 6 estudiantes trabajando en conjunto para investigar y presentar los protocolos
+                    IPSec y SET:</p>
 
                 <div class="team-members">
                     <div class="member card">
@@ -228,22 +336,30 @@
                     <article class="protocol-card card">
                         <div class="protocol-icon" aria-hidden="true">🔒</div>
                         <h3>IPSec (Internet Protocol Security)</h3>
-                        <p><strong>Función principal:</strong> Conjunto de protocolos que proporciona seguridad a nivel de red para comunicaciones IP mediante autenticación y cifrado.</p>
+                        <p><strong>Función principal:</strong> Conjunto de protocolos que proporciona seguridad a nivel
+                            de red para comunicaciones IP mediante autenticación y cifrado.</p>
                         <p><strong>Capa del modelo OSI:</strong> Capa de red (Capa 3).</p>
-                        <p><strong>Tipo de seguridad:</strong> Cifrado, autenticación, integridad y protección contra replay.</p>
-                        <p><strong>Ventajas:</strong> Transparente para aplicaciones, protección integral y amplia compatibilidad.</p>
-                        <p><strong>Limitaciones:</strong> Complejidad de configuración y posible impacto en rendimiento.</p>
+                        <p><strong>Tipo de seguridad:</strong> Cifrado, autenticación, integridad y protección contra
+                            replay.</p>
+                        <p><strong>Ventajas:</strong> Transparente para aplicaciones, protección integral y amplia
+                            compatibilidad.</p>
+                        <p><strong>Limitaciones:</strong> Complejidad de configuración y posible impacto en rendimiento.
+                        </p>
                         <p><strong>Ejemplo de uso:</strong> VPN para conectar oficinas remotas de forma segura.</p>
                     </article>
 
                     <article class="protocol-card card">
                         <div class="protocol-icon" aria-hidden="true">💳</div>
                         <h3>SET (Secure Electronic Transaction)</h3>
-                        <p><strong>Función principal:</strong> Protocolo para asegurar transacciones con tarjetas de crédito en Internet.</p>
+                        <p><strong>Función principal:</strong> Protocolo para asegurar transacciones con tarjetas de
+                            crédito en Internet.</p>
                         <p><strong>Capa del modelo OSI:</strong> Aplicación (Capa 7).</p>
-                        <p><strong>Tipo de seguridad:</strong> Confidencialidad, autenticación, integridad y no repudio.</p>
-                        <p><strong>Ventajas:</strong> Protección específica para transacciones y autenticación mutua.</p>
-                        <p><strong>Limitaciones:</strong> Complejidad de implementación y baja adopción; fue reemplazado en gran parte por SSL/TLS.</p>
+                        <p><strong>Tipo de seguridad:</strong> Confidencialidad, autenticación, integridad y no repudio.
+                        </p>
+                        <p><strong>Ventajas:</strong> Protección específica para transacciones y autenticación mutua.
+                        </p>
+                        <p><strong>Limitaciones:</strong> Complejidad de implementación y baja adopción; fue reemplazado
+                            en gran parte por SSL/TLS.</p>
                         <p><strong>Ejemplo de uso:</strong> Precursor de métodos de pago seguros actuales.</p>
                     </article>
                 </div>
@@ -252,7 +368,9 @@
                     <h3>Demostración Práctica</h3>
                     <p>Video que muestra la implementación y funcionamiento de IPSec y SET:</p>
                     <div class="video-container">
-                        <iframe width="813" height="466" src="https://www.youtube.com/embed/R-1wIxOWaE4?si=pjGib91az3kKCEP4" title="IPSec y SET" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="813" height="466"
+                            src="https://www.youtube.com/embed/R-1wIxOWaE4?si=pjGib91az3kKCEP4" title="IPSec y SET"
+                            frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
 
@@ -282,7 +400,8 @@
         <section id="team4" class="tab-content" role="tabpanel" hidden>
             <div class="card">
                 <h2>Nuestro Equipo</h2>
-                <p>Somos el Equipo 4, un grupo de estudiantes dedicados a investigar y presentar los protocolos SCP y SFTP:</p>
+                <p>Somos el Equipo 4, un grupo de estudiantes dedicados a investigar y presentar los protocolos SCP y
+                    SFTP:</p>
 
                 <div class="team-members">
                     <div class="member card">
@@ -312,25 +431,31 @@
                 </div>
 
                 <h2>Protocolos de Seguridad</h2>
-                <p>Nuestro equipo está investigando los protocolos SCP (Secure Copy Protocol) y SFTP (SSH File Transfer Protocol):</p>
+                <p>Nuestro equipo está investigando los protocolos SCP (Secure Copy Protocol) y SFTP (SSH File Transfer
+                    Protocol):</p>
 
                 <div class="protocol-section">
                     <article class="protocol-card card">
                         <div class="protocol-icon" aria-hidden="true">📁</div>
                         <h3>SCP (Secure Copy Protocol)</h3>
-                        <p><strong>Función principal:</strong> Transferir archivos de forma segura entre hosts usando SSH.</p>
+                        <p><strong>Función principal:</strong> Transferir archivos de forma segura entre hosts usando
+                            SSH.</p>
                         <p><strong>Capa OSI:</strong> Aplicación (Capa 7).</p>
                         <p><strong>Ventajas:</strong> Simple y eficiente para transferencias sencillas.</p>
-                        <p><strong>Limitaciones:</strong> No permite navegación interactiva ni reanudar transferencias.</p>
-                        <p><strong>Comando básico:</strong> <code>scp archivo.txt usuario@servidor:/ruta/destino/</code></p>
+                        <p><strong>Limitaciones:</strong> No permite navegación interactiva ni reanudar transferencias.
+                        </p>
+                        <p><strong>Comando básico:</strong> <code>scp archivo.txt usuario@servidor:/ruta/destino/</code>
+                        </p>
                     </article>
 
                     <article class="protocol-card card">
                         <div class="protocol-icon" aria-hidden="true">🔐</div>
                         <h3>SFTP (SSH File Transfer Protocol)</h3>
-                        <p><strong>Función principal:</strong> Proporcionar transferencia y gestión de archivos sobre una conexión SSH segura.</p>
+                        <p><strong>Función principal:</strong> Proporcionar transferencia y gestión de archivos sobre
+                            una conexión SSH segura.</p>
                         <p><strong>Capa OSI:</strong> Aplicación (Capa 7).</p>
-                        <p><strong>Ventajas:</strong> Navegación de directorios, reanudación de transferencias, gestión de permisos.</p>
+                        <p><strong>Ventajas:</strong> Navegación de directorios, reanudación de transferencias, gestión
+                            de permisos.</p>
                         <p><strong>Limitaciones:</strong> Mayor sobrecarga y complejidad comparado con SCP.</p>
                     </article>
                 </div>
@@ -357,50 +482,45 @@
                     </div>
                 </div>
 
-            <div class="card">
-                <h3>Demostración Práctica</h3>
-                <p>A continuación se presentan videos que muestran la implementación y uso de los protocolos SCP y SFTP:</p>
-                
-                <div class="videos-container">
-                    <div class="video-pair">
-                        <div class="video-item">
-                            <h4>Protocolo SCP</h4>
-                            <div class="video-container">
-                                <iframe width="813" height="466" 
-                                    src="https://www.youtube.com/embed/zZ7cep2uZVk"
-                                    title="YouTube video player"
-                                    frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    referrerpolicy="strict-origin-when-cross-origin"
-                                    allowfullscreen>
-                                </iframe>
+                <div class="card">
+                    <h3>Demostración Práctica</h3>
+                    <p>A continuación se presentan videos que muestran la implementación y uso de los protocolos SCP y
+                        SFTP:</p>
+
+                    <div class="videos-container">
+                        <div class="video-pair">
+                            <div class="video-item">
+                                <h4>Protocolo SCP</h4>
+                                <div class="video-container">
+                                    <iframe width="813" height="466" src="https://www.youtube.com/embed/zZ7cep2uZVk"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                    </iframe>
+                                </div>
                             </div>
-                        </div>
-                        <div class="video-item">
-                            <h4>Protocolo SFTP</h4>
-                            <div class="video-container">
-                                <iframe width="813" height="466" 
-                                    src="https://www.youtube.com/embed/TVqvnfYaQp4"
-                                    title="YouTube video player"
-                                    frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    referrerpolicy="strict-origin-when-cross-origin"
-                                    allowfullscreen>
-                                </iframe>
+                            <div class="video-item">
+                                <h4>Protocolo SFTP</h4>
+                                <div class="video-container">
+                                    <iframe width="813" height="466" src="https://www.youtube.com/embed/TVqvnfYaQp4"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                    </iframe>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <p><em>VIDEO_SCP y VIDEO_SFTP</em></p>
                 </div>
-                <p><em>VIDEO_SCP y VIDEO_SFTP</em></p>
-            </div>
 
-                    <h3>Referencias y Herramientas</h3>
-                    <ul class="references">
-                        <li>Barrett, D. J. (2016). SSH, The Secure Shell: The Definitive Guide.</li>
-                        <li>Ylonen, T., & Lonvick, C. (2006). RFC 4251 - The Secure Shell (SSH) Protocol Architecture.</li>
-                        <li>OpenSSH Project (2023). Documentación de OpenSSH.</li>
-                    </ul>
-                </div>
+                <h3>Referencias y Herramientas</h3>
+                <ul class="references">
+                    <li>Barrett, D. J. (2016). SSH, The Secure Shell: The Definitive Guide.</li>
+                    <li>Ylonen, T., & Lonvick, C. (2006). RFC 4251 - The Secure Shell (SSH) Protocol Architecture.</li>
+                    <li>OpenSSH Project (2023). Documentación de OpenSSH.</li>
+                </ul>
+            </div>
             </div>
         </section>
 
@@ -442,25 +562,32 @@
                 <div class="protocol-section">
                     <article class="protocol-card card">
                         <h3>✉️ SMTPS (Simple Mail Transfer Protocol Secure)</h3>
-                        <p><strong>Función principal:</strong> Envío de correo seguro mediante SMTP sobre TLS/SSL para cifrar la comunicación entre cliente y servidor.</p>
+                        <p><strong>Función principal:</strong> Envío de correo seguro mediante SMTP sobre TLS/SSL para
+                            cifrar la comunicación entre cliente y servidor.</p>
                         <p><strong>Capa OSI:</strong> Aplicación (Capa 7).</p>
-                        <p><strong>Tipo de seguridad:</strong> TLS/SSL, autenticación del servidor y protección contra MITM.</p>
-                        <p><strong>Ejemplo de uso:</strong> Envío seguro desde aplicaciones web usando puerto 465 o 587 con STARTTLS/TLS.</p>
+                        <p><strong>Tipo de seguridad:</strong> TLS/SSL, autenticación del servidor y protección contra
+                            MITM.</p>
+                        <p><strong>Ejemplo de uso:</strong> Envío seguro desde aplicaciones web usando puerto 465 o 587
+                            con STARTTLS/TLS.</p>
                     </article>
 
                     <article class="protocol-card card">
                         <h3>📩 IMAPS (Internet Message Access Protocol Secure)</h3>
-                        <p><strong>Función principal:</strong> Acceso y gestión de correos almacenados en servidor mediante IMAP sobre TLS/SSL.</p>
+                        <p><strong>Función principal:</strong> Acceso y gestión de correos almacenados en servidor
+                            mediante IMAP sobre TLS/SSL.</p>
                         <p><strong>Capa OSI:</strong> Aplicación (Capa 7).</p>
                         <p><strong>Ejemplo de uso:</strong> Acceso seguro a buzones con puertos como 993.</p>
                     </article>
 
                     <article class="protocol-card card">
                         <h3>🔑 OAuth (Open Authorization)</h3>
-                        <p><strong>Función principal:</strong> Mecanismo para que aplicaciones obtengan acceso limitado a recursos de un usuario sin compartir su contraseña.</p>
+                        <p><strong>Función principal:</strong> Mecanismo para que aplicaciones obtengan acceso limitado
+                            a recursos de un usuario sin compartir su contraseña.</p>
                         <p><strong>Capa OSI:</strong> Aplicación (Capa 7).</p>
-                        <p><strong>Tipo de seguridad:</strong> Tokens de acceso, autorización delegada y uso sobre HTTPS.</p>
-                        <p><strong>Ejemplo de uso:</strong> Inicio de sesión con Google o Facebook mediante intercambio de tokens.</p>
+                        <p><strong>Tipo de seguridad:</strong> Tokens de acceso, autorización delegada y uso sobre
+                            HTTPS.</p>
+                        <p><strong>Ejemplo de uso:</strong> Inicio de sesión con Google o Facebook mediante intercambio
+                            de tokens.</p>
                     </article>
                 </div>
 
@@ -468,12 +595,14 @@
                     <h3>Demostración Práctica</h3>
                     <p>Video explicativo y simulación:</p>
                     <div class="video-container">
-                        <iframe width="813" height="466" src="https://www.youtube.com/embed/ltJ_WU2lc3c" title="EQUIPO 5 PROTOCOLO DE SEGURIDAD" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="813" height="466" src="https://www.youtube.com/embed/ltJ_WU2lc3c"
+                            title="EQUIPO 5 PROTOCOLO DE SEGURIDAD" frameborder="0" allowfullscreen></iframe>
                     </div>
 
                     <div class="video-footer">
                         <p><em>Si el video no aparece, puede dar clic al siguiente botón:</em></p>
-                        <a href="https://www.youtube.com/watch?v=ltJ_WU2lc3c" target="_blank" class="btn-video" rel="noopener noreferrer">Ver en YouTube</a>
+                        <a href="https://www.youtube.com/watch?v=ltJ_WU2lc3c" target="_blank" class="btn-video"
+                            rel="noopener noreferrer">Ver en YouTube</a>
                     </div>
                 </div>
 
@@ -506,7 +635,7 @@
 
     <script>
 
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const tabs = document.querySelectorAll('.nav-tab');
             const contents = document.querySelectorAll('.tab-content');
 
@@ -531,10 +660,10 @@
             }
 
             tabs.forEach(tab => {
-                tab.addEventListener('click', function() {
+                tab.addEventListener('click', function () {
                     activateTab(this);
                 });
-                tab.addEventListener('keydown', function(e) {
+                tab.addEventListener('keydown', function (e) {
                     if (e.key === 'Enter' || e.key === ' ') {
                         e.preventDefault();
                         activateTab(this);
@@ -547,7 +676,7 @@
             const savedTheme = localStorage.getItem('theme') || 'light';
             document.documentElement.setAttribute('data-theme', savedTheme);
 
-            themeToggle.addEventListener('click', function() {
+            themeToggle.addEventListener('click', function () {
                 const current = document.documentElement.getAttribute('data-theme') || 'light';
                 const next = current === 'dark' ? 'light' : 'dark';
                 document.documentElement.setAttribute('data-theme', next);
@@ -561,5 +690,5 @@
         });
     </script>
 </body>
-</html>
 
+</html>
